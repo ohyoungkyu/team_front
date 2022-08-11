@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" type="text/css"/>
 <head>
     <meta charset="UTF-8">
     <!--    <div th:replace="common/darkMod :: darkFragment"></div>-->
@@ -14,13 +15,13 @@
 <section class="con">
     <div class="top-bar h-24 w-full bg-white relative">
         <div class="top-bar image w-full mx-auto h-full flex">
-            <a th:href="@{|/|}" class="logo flex items-center">
+            <a th:href="@{|/|}" class="logo flex flex-items-center">
                 <img src="https://ifh.cc/g/8jDNxA.png" alt="하늘하늘" style="display: block; margin: 0 auto; width:200px; height:100px;">
             </a>
 
             <div class="flex-grow"></div>
 
-            <ul class="top-bar-icon flex items-center mx-auto">
+            <ul class="top-bar icon flex items-center mx-auto">
                 <li>
                     <a th:if = "${session.UserId == null}" th:href="@{|/user/login|}" class="p-3 text-xl">로그인</a>
                 </li>
@@ -31,10 +32,10 @@
                     <a th:if = "${session.UserId == null}" th:href="@{|/user/join|}" class="p-3 text-xl">회원가입</a>
                 </li>
                 <li>
-                    <a th:if = "${session.UserId != null}" href="#" class="p-3 text-xl">마이페이지</a>
+                    <a th:if = "${session.UserId != null}" th:href="@{/user/myPage}" class="p-3 text-xl">마이페이지</a>
                 </li>
                 <li>
-                    <a th:if = "${session.UserId != null}" href="#" class="p-3 text-xl">장바구니</a>
+                    <a th:if = "${session.UserId != null}" th:href="@{|/user/shoppingCart|}" class="p-3 text-xl">장바구니</a>
                 </li>
                 <li>
                     <a th:if = "${session.UserId == null}" th:href="@{|/user/login|}" class="p-3 text-xl">장바구니</a>
@@ -49,22 +50,22 @@
         <nav class="top-bar__menu-box-1 w-full flex justify-center">
             <ul class="flex h-full">
                 <li>
-                    <a href="#" class="flex items-center h-full px-5">
+                    <a th:href="@{|/product/list?category=man|}" class="flex items-center h-full px-5">
                         <span class="text-2xl">MAN</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center h-full px-5">
+                    <a th:href="@{|/product/list?category=woman|}" class="flex items-center h-full px-5">
                         <span class="text-2xl">WOMAN</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center h-full px-5">
-                        <span class="text-2xl">TRANNING</span>
+                    <a th:href="@{|/product/list?category=training|}" class="flex items-center h-full px-5">
+                        <span class="text-2xl">TRAINING</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="flex items-center h-full px-5">
+                    <a th:href="@{|/product/list?category=acc|}" class="flex items-center h-full px-5">
                         <span class="text-2xl">ACC</span>
                     </a>
                 </li>
@@ -75,18 +76,18 @@
 </main>
 <div class="footer w-full h-96 flex flex-col">
     <nav class="division w-full h-20 flex justify-center border border-gray mt-5 mb-5">
-        <ul class="flex">
+        <ul class="flex h-full">
             <li>
-                <a href="https://about.hiver.co.kr/" class="text-2xl flex h-full px-5 items-center">회사소개</a>
+                <a href="" class="flex h-full px-5 items-center">회사소개</a>
             </li>
             <li>
-                <a href="" class="text-2xl flex h-full px-5 items-center"> Q & A</a>
+                <a href="" class="flex h-full px-5 items-center"> Q & A</a>
             </li>
             <li>
-                <a href="" class="text-2xl flex h-full px-5 items-center"> 이용약관</a>
+                <a href="" class="flex h-full px-5 items-center"> 이용약관</a>
             </li>
             <li>
-                <a href="https://www.law.go.kr/html/renew/privacy.html" class="text-2xl flex h-full px-5 items-center" target="_blank">개인정보처리방침</a>
+                <a href="https://www.law.go.kr/html/renew/privacy.html" class="flex h-full px-5 items-center">개인정보처리방침</a>
             </li>
         </ul>
     </nav>
